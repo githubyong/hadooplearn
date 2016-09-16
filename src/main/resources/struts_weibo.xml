@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="web_weibo" namespace="/" extends="default">
+		<action name="weibo" class="org.robby.web.action.WeiboAction" method="exec">
+			<result name="success">
+				/weibo/floow.jsp
+			</result>
+		</action>
+
+		<action name="floow" class="org.robby.web.action.WeiboAction" method="floow" >
+			<result name="success">
+				/weibo/floow.jsp
+			</result>
+		</action>
+
+		<action name="unfloow" class="org.robby.web.action.WeiboAction" method="unfloow" >
+			<result name="success">
+				/weibo/floow.jsp
+			</result>
+		</action>
+		<action name="post" class="org.robby.web.action.WeiboAction" method="post" >
+			<result name="success">
+				/weibo/post.jsp
+			</result>
+		</action>
+		<action name="inbox" class="org.robby.web.action.WeiboAction" method="inbox" >
+			<result name="success">
+				/weibo/inbox.jsp
+			</result>
+		</action>
+	</package>
+</struts>

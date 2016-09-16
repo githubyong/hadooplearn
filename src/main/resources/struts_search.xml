@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="web_search" namespace="/" extends="struts-default">
+		<action name="search" class="org.robby.web.action.SearchAction" method="search">
+			<result name="success">
+				/search/search.jsp
+			</result>
+		</action>
+	</package>
+	
+	<package name="web_suggest" namespace="/" extends="json-default">
+		<action name="suggest" class="org.robby.web.action.SearchAction">
+    	   <result type="json"></result>
+    	</action>
+	</package>
+</struts>

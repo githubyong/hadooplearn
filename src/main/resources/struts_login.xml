@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="web_login" namespace="/" extends="default">
+		<action name="login" class="org.robby.web.action.UserAction" method="login">
+			<result name="success">
+				/login/register_ret.jsp
+			</result>
+		</action>
+		
+		<action name="register" class="org.robby.web.action.UserAction" method="register">
+			<result name="success">
+				/login/register_ret.jsp
+			</result>
+		</action>
+		
+		<action name="logout" class="org.robby.web.action.UserAction" method="logout">
+			<result name="success">
+				/login/register_ret.jsp
+			</result>
+		</action>
+	</package>
+
+</struts>

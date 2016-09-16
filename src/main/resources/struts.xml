@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.multipart.maxSize" value="20971520" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="do" />
+	<!-- <constant name="struts.action.extension" value="do" /> -->
+
+	<package name="default" extends="struts-default">
+		<interceptors>
+			<interceptor name="loginJudge"
+				class="org.robby.web.action.UsrLoginInterceptor">
+			</interceptor>
+
+			<!-- 自定义拦截器栈 -->
+			<interceptor-stack name="myDefaultStack">
+				<interceptor-ref name="loginJudge"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+
+		<default-interceptor-ref name="myDefaultStack"></default-interceptor-ref>
+		<!-- 全局结果 -->
+		<global-results>
+			<!-- 拦截没登录返回结果 -->
+			<result name="noLogin" type="redirect">/login/no_login.jsp</result>
+		</global-results>
+	</package>
+		
+	<include file="struts_test.xml" />
+	<include file="struts_login.xml" />
+	<include file="struts_storage.xml" />
+	<include file="struts_search.xml" />
+	<include file="struts_cdr.xml" />
+	<include file="struts_weibo.xml" />
+
+</struts>
