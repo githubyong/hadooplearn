@@ -6,7 +6,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>web Maven Webapp</name>
     <url>http://maven.apache.org</url>
-    <packaging>war</packaging>
+    <!--<packaging>war</packaging>-->
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -76,6 +77,17 @@
             <version>2.6.1</version>
             <!--<version>3.0.0-beta-3</version>-->
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.storm/storm-core -->
+        <dependency>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-core</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.35</version>
+        </dependency>
 
     </dependencies>
     <build>
@@ -97,7 +109,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.5</version>
                 <configuration>
-                    <outputDirectory>D:\share\hadoop1</outputDirectory>
+                    <outputDirectory>G:\share_disk\hadoop</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>

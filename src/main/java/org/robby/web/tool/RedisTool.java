@@ -16,6 +16,12 @@ public class RedisTool {
         }
     }
 
+    public static void CreateJedisObj(String host) {
+        if (jedis == null) {
+            jedis = new Jedis(host);
+        }
+    }
+
     public static synchronized boolean registerUser(String name, String pwd) {
         try {
             CreateJedisObj();
@@ -146,5 +152,50 @@ public class RedisTool {
             e.printStackTrace();
         }
         return usrs;
+    }
+
+    public static long llen(String key) {
+        try {
+            CreateJedisObj();
+            long len =  jedis.llen(key);
+            return  len;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    public static String rpop(String key) {
+        try {
+            return jedis.rpop(key);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static void lpush(String key, String value) {
+        try {
+            CreateJedisObj();
+            jedis.lpush(key, value);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static Map<String, String> hgetAll(String key) {
+        try {;
+            CreateJedisObj();
+            Map<String, String> map =  jedis.hgetAll(key);
+            return map;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static void main(String[] args) {
+     long len =   RedisTool.llen("cdr-test");
     }
 }

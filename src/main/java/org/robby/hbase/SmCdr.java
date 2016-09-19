@@ -41,7 +41,7 @@ public class SmCdr {
 
     public String randomSimNim(String prefix) {
         Random random = new Random();
-        return String.format("%s%8d", prefix, random.nextInt(99999999));
+        return String.format("%s%08d", prefix, random.nextInt(99999999));
     }
 
     public String randomTime() {
