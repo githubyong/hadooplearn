@@ -1,0 +1,18 @@
+key = 1 lefttab = [长春       1       901     1]|      righttab = [3  3G      555, 1  2G      123]
+------------ reduce key =1  vals =[], out = 长春      1       901     1       1       2G      123
+key = 2 lefttab = [吉林       2       902     1]|      righttab = [2  3G      333]
+------------ reduce key =2  vals =[], out = 吉林      2       902     1       2       3G      333
+key = 3 lefttab = [四平       3       903     1]|      righttab = [4  2G      777]
+------------ reduce key =3  vals =[], out = 四平      3       903     1       4       2G      777
+key = 4 lefttab = [松原       4       904     1]|      righttab = [5  3G      666]
+------------ reduce key =4  vals =[], out = 松原      4       904     1       5       3G      666
+key = 5 lefttab = [通化       5       905     1]|      righttab = []
+------------ reduce key =5  vals =[], out =
+key = 6 lefttab = [辽源       6       906     1]|      righttab = []
+------------ reduce key =6  vals =[], out =
+key = 7 lefttab = [白城       7       907     1]|      righttab = []
+------------ reduce key =7  vals =[], out =
+key = 8 lefttab = [白山       8       908     1]|      righttab = []
+------------ reduce key =8  vals =[], out =
+key = 9 lefttab = [延吉       9       909     1]|      righttab = []
+------------ reduce key =9  vals =[], out =

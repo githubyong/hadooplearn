@@ -9,6 +9,10 @@
     <!--<packaging>war</packaging>-->
     <packaging>jar</packaging>
 
+    <properties>
+        <!--<war.outputDirectory>G:\share_disk\hadoop</war.outputDirectory>-->
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -109,7 +113,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.5</version>
                 <configuration>
-                    <outputDirectory>G:\share_disk\hadoop</outputDirectory>
+                    <outputDirectory>${war.outputDirectory}</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -117,7 +121,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.1.1</version>
                 <configuration>
-                    <outputDirectory>G:\share_disk\hadoop</outputDirectory>
+                    <outputDirectory>${war.outputDirectory}</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>

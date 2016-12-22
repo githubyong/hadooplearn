@@ -109,7 +109,7 @@ public class ReduceJoin {
         //存储一个分组中的右表信息   
         private ArrayList<Text> rightTable = new ArrayList<Text>();
         private Text secondPar = null;
-        private Text output = new Text();
+        private Text output = null;
 
         private Map<Text, ArrayList<Text>> joinTable = new HashMap<>();
 
@@ -123,6 +123,7 @@ public class ReduceJoin {
 //            logger.info("########### key = {} val = {}",key, IteratorUtils.toList(value.iterator()));
             leftTable.clear();
             rightTable.clear();
+            output = new Text();
             /**
              * 将分组中的元素按照文件分别进行存放   
              * 这种方法要注意的问题：   
@@ -142,8 +143,9 @@ public class ReduceJoin {
                 }
             }
 
-            logger.info("tb_dim_city:" + leftTable.toString() + " key = " + key);
-            logger.info("tb_user_profiles:" + rightTable.toString() + "  key = " + key);
+            logger.info(String.format("key = %s lefttab = %s|\t righttab = %s", key, leftTable, rightTable));
+//            logger.info("tb_dim_city: k"  + leftTable.toString() + " key = " + key);
+//            logger.info("tb_user_profiles:" + rightTable.toString() + "  key = " + key);
             for (Text leftPart : leftTable) {
                 for (Text rightPart : rightTable) {
                     output.set(leftPart + "\t" + rightPart);
