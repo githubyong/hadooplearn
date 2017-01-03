@@ -53,6 +53,10 @@ public class SmCdr {
         return new Random().nextInt(2) + "";
     }
 
+    /**
+     * 使用 单 column family + 多 column qulifier 组合存储多列信息
+     * @throws IOException
+     */
     public void generateData() throws IOException {
         Configuration conf = HBaseConfiguration.create();
         conf.set("hbase.zookeeper.quorum", "hadoop1");
@@ -148,6 +152,10 @@ public class SmCdr {
     }
 
 
+    /**
+     * 使用 protobuf cdr的方式存储 数据，单column family 单 column qulifier
+     * @throws IOException
+     */
     public void generateData1() throws IOException {
         Configuration conf = HBaseConfiguration.create();
         conf.set("hbase.zookeeper.quorum", "hadoop1");
